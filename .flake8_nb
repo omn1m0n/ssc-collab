@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 [flake8_nb]
-exclude = .git,__pycache__
+exclude = .git, __pycache__
 max-line-length = 120
+=======
+[flake8_nb]
+exclude = .git, __pycache__
+max-line-length = 120
+>>>>>>> omni
