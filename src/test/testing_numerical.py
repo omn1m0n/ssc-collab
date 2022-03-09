@@ -14,3 +14,13 @@ def test_filter_constant():
     assert np.all(
         mynum.df_filter_constant(testDf, ["zero"], VarThreshold=0) == resultDf
     )
+
+
+def test_autocorrelation():
+    """test if the autocorrelation function is working as intended"""
+
+    testDf = pd.DataFrame(
+        {"one": [1, 0, 0], "two": [0, 1, 0], "three": [0, 0, 1], "four": [1, 1, 1]}
+    )
+
+    assert np.all(mynum.autocorrelation(testDf, ["four"]) == np.ones(3))
