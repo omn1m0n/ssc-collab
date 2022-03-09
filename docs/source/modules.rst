@@ -5,3 +5,5 @@ src
    :maxdepth: 4
 
    main
+   numerical
+   statistical
