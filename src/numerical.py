@@ -13,7 +13,7 @@ def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
     :param Ignore: List of columns to be ignored,
     columns will end up in returned dataframe
     regardless of variance.
-    :type Ignore: array-like
+    :type Ignore: array
 
     :param Varthreshold: All columns with less or equal
     this variance will not
@@ -25,7 +25,7 @@ def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
 
     :return: Copy of Dataframe, where all columns with variance
      less than given treshold are discarded
-    :rtype: pandas.Dataframe
+    :rtype: pandas DataFrame
     """
 
     NewDf = Dataframe
@@ -57,7 +57,7 @@ def plot_relevant_columns(Dataframe, xAxis, figsize=(14, 10), VarTreshold=0):
     :type Dataframe: pandas Dataframe
 
     :param xAxis: column to be used for the xAxis
-    of the plots
+    of the plots.
     :type xAxis: Key for dataframe (most likely string)
 
     :param Varthreshold: All columns with less or
@@ -86,12 +86,14 @@ def autocorrelation(Dataframe, Ignore):
     rows of a dataframe using the given definition
 
     :param Dataframe: Dataframe from which
-    autocorellation should be calculated
-    :type Dataframe: pd.DataFrame
+    autocorellation should be calculated.
+
+    :type Dataframe: pandas DataFrame
 
     :param Ignore: List of columns to be ignored,
     columns will end up in returned dataframe
     regardless of variance.
+
     :type Ignore: array-like
 
     :returns: array of the result from autocorrelation function.
