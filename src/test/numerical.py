@@ -83,7 +83,7 @@ def plot_relevant_columns(Dataframe, xAxis, figsize=(14, 10), VarTreshold=0):
 def autocorrelation(Dataframe, Ignore):
 
     """Calculate autocorrelation-function of complex valued
-    rows of a dataframe using the given definition
+    rows of a dataframe using the given definition.
 
     :param Dataframe: Dataframe from which
     autocorellation should be calculated.
@@ -97,7 +97,9 @@ def autocorrelation(Dataframe, Ignore):
     :type Ignore: array-like
 
     :returns: array of the result from autocorrelation function.
-    Length is the number of rows in Dataframe.
+    Has same dimensions as initial dataframe, each row represents
+    the result with the corresponding timestep as upper boundary of
+    the integral.
     :rtype: numpy.array"""
 
     for key in Ignore:
@@ -105,14 +107,14 @@ def autocorrelation(Dataframe, Ignore):
 
     vec0 = newDf.loc[0, :].to_numpy()
 
-    result = np.zeros(newDf.shape[0], dtype=complex)
+    result = np.zeros(newDf.shape, dtype=complex)
 
     for i in range(newDf.shape[0]):
 
         j = 0
 
         while j <= i:
-            result[i] += np.vdot(vec0, newDf.loc[j, :].to_numpy())
+            result[i, :] += np.conj(vec0) * newDf.loc[j, :].to_numpy()
             j += 1
 
     return result

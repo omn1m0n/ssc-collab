@@ -23,4 +23,7 @@ def test_autocorrelation():
         {"one": [1, 0, 0], "two": [0, 1, 0], "three": [0, 0, 1], "four": [1, 1, 1]}
     )
 
-    assert np.all(mynum.autocorrelation(testDf, ["four"]) == np.ones(3))
+    assert np.all(
+        mynum.autocorrelation(testDf, ["four"])[-1]
+        == np.array([1, 0, 0], dtype=complex)
+    )
