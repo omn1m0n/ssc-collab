@@ -75,3 +75,39 @@ def plot_relevant_columns(Dataframe, xAxis, figsize=(14, 10), VarTreshold=0):
         print(e, "Specified x-axis not found in dataframe")
 
     NewDF.plot(x=xAxis, subplots=True, figsize=figsize)
+
+
+def autocorrelation(Dataframe, Ignore):
+
+    """Calculate autocorrelation-function of complex valued
+    rows of a dataframe using the given definition
+
+    :param Dataframe: Dataframe from which
+    autocorellation should be calculated
+    :type Dataframe: pd.DataFrame
+
+    :param Ignore: List of columns to be ignored,
+    columns will end up in returned dataframe
+    regardless of variance.
+    :type Ignore: array-like
+
+    :returns: array of the result from autocorrelation function.
+    Length is the number of rows in Dataframe.
+    :rtype: numpy.array"""
+
+    for key in Ignore:
+        newDf = Dataframe.drop(key, axis=1)
+
+    vec0 = newDf.loc[0, :].to_numpy()
+
+    result = np.zeros(newDf.shape[0], dtype=complex)
+
+    for i in range(newDf.shape[0]):
+
+        j = 0
+
+        while j <= i:
+            result[i] += np.vdot(vec0, newDf.loc[j, :].to_numpy())
+            j += 1
+
+    return result
