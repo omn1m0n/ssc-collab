@@ -37,7 +37,7 @@ def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
     for key in Dataframe.columns.values:
 
         if key in Ignore:
-            pass
+            continue
 
         if np.var(NewDf[key]) <= VarThreshold:
             NewDf = NewDf.drop(key, axis=1)
