@@ -6,7 +6,6 @@ def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
     """Find and remove columns which do not have a variance bigger
     than the given threshold.
 
-
     :param Dataframe: Dataframe to be scanned for
     constant columns.
     :type Dataframe: pandas Dataframe
@@ -19,6 +18,7 @@ def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
     :param Varthreshold: All columns with less or equal
     this variance will not
     end up in returned data frame.
+    :type Vartreshold: float
 
     :raises KeyError: Raises error, when Ignore contains
     keywords that Dataframe does not contain
