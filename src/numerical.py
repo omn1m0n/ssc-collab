@@ -4,6 +4,8 @@ import numpy as np
 def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
     """Find and remove columns which do not have a variance bigger
     than the given threshold.
+
+
     :param Dataframe: Dataframe to be scanned for
     constant columns.
     :type Dataframe: pandas Dataframe
