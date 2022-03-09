@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 unit1/z-axis_expected.pdf
+docs/.vscode/
