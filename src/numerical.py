@@ -49,18 +49,18 @@ def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
 
 def plot_relevant_columns(Dataframe, xAxis, figsize=(14, 10), VarTreshold=0):
 
-    """Plot columns with Variance bigger than the
+    """Plot columns with Variance bigger than the \
     given threshold.
 
-    :param Dataframe: Dataframe to be plotted.
+    :param Dataframe: Dataframe to be plotted. \
     :type Dataframe: pandas Dataframe
 
-    :param xAxis: column to be used for the xAxis
+    :param xAxis: column to be used for the xAxis \
     of the plots.
     :type xAxis: Key for dataframe (most likely string)
 
-    :param Varthreshold: All columns with less or
-    equal this variance will not end up in returned data frame.
+    :param Varthreshold: All columns with less or \
+    equal this variance will not end up in returned data frame. \
     Default is 0, so only constant columns will be discarded
     :type Varthreshold: float
 
@@ -80,23 +80,22 @@ def plot_relevant_columns(Dataframe, xAxis, figsize=(14, 10), VarTreshold=0):
 
 def autocorrelation(Dataframe, Ignore):
 
-    """Calculate autocorrelation-function of complex valued
+    """Calculate autocorrelation-function of complex valued \
     rows of a dataframe using the given definition.
 
-    :param Dataframe: Dataframe from which
+    :param Dataframe: Dataframe from which \
     autocorellation should be calculated.
-
     :type Dataframe: pandas DataFrame
 
-    :param Ignore: List of columns to be ignored,
-    columns will end up in returned dataframe
+    :param Ignore: List of columns to be ignored, \
+    columns will end up in returned dataframe.
     regardless of variance.
 
     :type Ignore: array-like
 
-    :returns: array of the result from autocorrelation function.
-    Has same dimensions as initial dataframe, each row represents
-    the result with the corresponding timestep as upper boundary of
+    :returns: array of the result from autocorrelation function. \
+    Has same dimensions as initial dataframe, each row represents \
+    the result with the corresponding timestep as upper boundary of \
     the integral.
     :rtype: numpy.array"""
 
