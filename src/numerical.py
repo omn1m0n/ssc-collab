@@ -3,28 +3,27 @@ import numpy as np
 
 def df_filter_constant(Dataframe, Ignore, VarThreshold=0.01):
 
-    """Find and remove columns which do not have a variance bigger
-    than the given threshold.
+    """Remove columns which don't have a variance bigger than the given threshold.
 
-    :param Dataframe: Dataframe to be scanned for
+    :param Dataframe: Dataframe to be scanned for \
     constant columns.
     :type Dataframe: pandas Dataframe
 
-    :param Ignore: List of columns to be ignored,
-    columns will end up in returned dataframe
+    :param Ignore: List of columns to be ignored, \
+    columns will end up in returned dataframe \
     regardless of variance.
     :type Ignore: array
 
-    :param Varthreshold: All columns with less or equal
-    this variance will not
+    :param Varthreshold: All columns with less or equal \
+    this variance will not \
     end up in returned data frame.
     :type Vartreshold: float
 
-    :raises KeyError: Raises error, when Ignore contains
-    keywords that Dataframe does not contain
+    :raises KeyError: Raises error, when Ignore contains \
+    keywords that Dataframe does not contain.
 
-    :return: Copy of Dataframe, where all columns with variance
-     less than given treshold are discarded
+    :return: Copy of Dataframe, where all columns with variance \
+    less than given treshold are discarded.
     :rtype: pandas DataFrame
     """
 
@@ -61,8 +60,7 @@ def plot_relevant_columns(Dataframe, xAxis, figsize=(14, 10), VarTreshold=0):
     :type xAxis: Key for dataframe (most likely string)
 
     :param Varthreshold: All columns with less or
-    equal this variance will not
-    end up in returned data frame.
+    equal this variance will not end up in returned data frame.
     Default is 0, so only constant columns will be discarded
     :type Varthreshold: float
 
