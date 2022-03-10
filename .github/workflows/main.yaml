@@ -35,3 +35,7 @@ jobs:
         pip install -r requirements.txt
     - name: run linter
       run: flake8
+    - name: run testing
+      run: |
+        cd src/testing
+        python -m pytest testing_numerical.py
