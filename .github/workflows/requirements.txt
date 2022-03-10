@@ -1,0 +1,9 @@
+numpy
+pandas
+pytest
+matplotlib
+seaborn
+unittest
+sphinx
+flake8
+recommonmark
