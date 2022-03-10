@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 unit1/z-axis_expected.pdf
+unit1/correlationNpopValues.csv
 docs/.vscode/
