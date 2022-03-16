@@ -1,5 +1,5 @@
 import numpy as np
-import statistical.py as mystat
+import statistical as mystat
 
 
 def test_euclidean_distance():
