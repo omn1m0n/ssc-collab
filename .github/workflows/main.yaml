@@ -39,3 +39,4 @@ jobs:
       run: |
         cd src/test
         python -m pytest testing_numerical.py
+        python -m pytest testing_statistical.py
